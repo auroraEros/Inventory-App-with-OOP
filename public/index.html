@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="//use.fontawesome.com/releases/v5.0.7/css/all.css"
+    />
+    <link rel="stylesheet" href="./build/tailwind.css" />
+  </head>
+  <body class="bg-slate-800 h-screen w-screen">
+    <header class="mb-7">
+      <div class="h-12 flex items-center justify-center gap-x-4 bg-slate-700">
+        <h1 class="text-xl font-bold text-slate-300">
+          Inventory App using Tailwind & JavaScript
+        </h1>
+        <span
+          id="total-products"
+          class="flex item-center justify-center w-7 h-7 rounded-full bg-slate-500 text-slate-300 border-2"
+        ></span>
+      </div>
+    </header>
+
+    <main class="container max-w-xl mx-auto">
+      <!-- add category -->
+      <section class="mb-6 category-container relative">
+        <h2 class="text-xl text-slate-300 font-bold mb-2">Add new category</h2>
+        <form
+          class="bg-slate-700 rounded-xl p-4 flex flex-col gap-y-4 text-slate-400"
+        >
+          <div>
+            <label for="category-title" class="block mb-1">Title</label>
+            <input
+              type="text"
+              name="category-title"
+              id="category-title"
+              class="bg-transparent rounded-xl border border-slate-500 text-slate-400"
+            />
+          </div>
+
+          <div>
+            <label for="category-description" class="block mb-1"
+              >description</label
+            >
+            <textarea
+              name="category-description"
+              id="category-description"
+              class="block mb-1 bg-transparent rounded-xl border border-slate-500 text-slate-400 w-full"
+            ></textarea>
+          </div>
+          <div class="flex justify-between items-center gap-x-4">
+            <button
+              class="flex-1 border border-slate-300 text-slate-300 rounded-xl py-2"
+            >
+              Cancel
+            </button>
+            <button
+              id="add-new-category"
+              class="flex-1 bg-slate-400 text-slate-200 rounded-xl py-2"
+            >
+              Add new Category
+            </button>
+          </div>
+        </form>
+      </section>
+
+      <!-- add product -->
+      <section class="mb-6">
+        <h2 class="text-xl text-slate-300 font-bold mb-2">Add New Product</h2>
+        <form
+          class="bg-slate-700 rounded-xl p-4 flex flex-col gap-y-4 text-slate-400"
+        >
+          <div>
+            <label for="product-title" class="block mb-1">Title</label>
+            <input
+              type="text"
+              name="product-title"
+              id="product-title"
+              placeholder="Product Title"
+              class="bg-transparent rounded-xl border border-slate-500 text-slate-400"
+            />
+          </div>
+
+          <div>
+            <label for="quantity" class="block mb-1">Quantity</label>
+
+            <input
+              type="number"
+              name="quantity"
+              id="quantity"
+              placeholder="Quantity..."
+              class="block mb-1 bg-transparent rounded-xl border border-slate-500 text-slate-400"
+            />
+          </div>
+
+          <div>
+            <label for="product-category" class="block mb-1">Category</label>
+            <select
+              name="categort"
+              id="product-category"
+              class="block mb-1 bg-transparent rounded-xl border border-slate-500 text-slate-400 w-full"
+            ></select>
+          </div>
+
+          <div class="w-full">
+            <button
+              id="add-new-product"
+              class="w-full block bg-slate-400 text-slate-200 rounded-xl py-2"
+            >
+              Add new Product
+            </button>
+          </div>
+        </form>
+      </section>
+
+      <!-- product list -->
+      <section>
+        <h2 class="text-xl text-slate-300 font-bold mb-2">Product List</h2>
+        <div
+          class="flex justify-between items-center mb-6 text-lg text-slate-400"
+        >
+          <label for="search-products">Search</label>
+          <input
+            id="search-products"
+            class="bg-transparent rounded-xl border border-slate-50"
+            type="text"
+          />
+        </div>
+
+        <div class="flex justify-between items-center mb-6">
+          <label for="sort-products" class="text-slate-400 text-lg"
+            >Select a category</label
+          >
+          <select
+            name="sort-products"
+            id="sort-products"
+            class="bg-transparent text-slate-400 rounded-xl"
+          >
+            <option value="newest" selected class="text-slate-300 bg-slate-500">
+              Newest
+            </option>
+            <option value="oldest" class="text-slate-300 bg-slate-500">
+              Oldest
+            </option>
+          </select>
+        </div>
+        <ul id="products-list" class="list-none mb-2"></ul>
+
+        <div class="h-20">&nbsp;</div>
+      </section>
+    </main>
+  </body>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <script src="/src/js/app.js" type="module"></script>
+</html>
