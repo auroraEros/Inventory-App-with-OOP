@@ -25,6 +25,15 @@ This project is an inventory management system built using Object-Oriented Progr
 - **PostCSS**: For processing CSS with PostCSS plugins.
 - **Local Storage**: Data storage for persistent data across sessions.
 
+---
+
+### 📌 Live Demo
+
+[Inventory App with OOP](https://aurora-inventory.netlify.app/)
+
+---
+
+
 ## Installation
 
 ### Prerequisites
